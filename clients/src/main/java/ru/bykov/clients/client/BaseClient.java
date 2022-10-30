@@ -9,7 +9,6 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
-
 @RequiredArgsConstructor
 public class BaseClient {
     protected final RestTemplate rest;
@@ -43,8 +42,6 @@ public class BaseClient {
         }
         return responseBuilder.build();
     }
-
-
 
     protected ResponseEntity<Long> get(String path, Map<String, Object> parameters) {
         return makeAndSendRequestForGet(path, parameters);

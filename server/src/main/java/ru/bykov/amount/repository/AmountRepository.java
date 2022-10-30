@@ -9,7 +9,10 @@ import ru.bykov.amount.model.Amount;
 
 @Repository
 public interface AmountRepository extends JpaRepository<Amount, Integer> {
-    Long getAmountById(Integer id);
+
+
+    @Query("SELECT a.value from Amount a where a.id = :id")
+    Long getAmountById(@Param("id") Integer id);
 
     @Modifying
     @Query("update Amount a set a.value = (a.value + :value) where a.id = :id")

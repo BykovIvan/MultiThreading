@@ -27,9 +27,11 @@ public class AmountServiceImpl implements AmountService {
     @CacheEvict(value = "amounts", key = "#id")
     @Transactional
     public void addAmount(Integer id, Long value) {
-        if (amountRepository.findById(id).isEmpty())
+        if (amountRepository.findById(id).isEmpty()) {
             amountRepository.save(Amount.builder().id(id).value(value).build());
+        } else {
+            amountRepository.setValueById(id, value);
+        }
 
-        amountRepository.setValueById(id, value);
     }
 }

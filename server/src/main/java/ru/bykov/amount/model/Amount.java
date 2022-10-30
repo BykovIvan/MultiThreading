@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "amounts", schema = "public")
 public class Amount {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Long value;
 }
