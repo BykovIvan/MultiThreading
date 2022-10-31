@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     static String path = "http://localhost:8080";
-    static String fileStr = "./clientsJdbc/src/resources/config.csv";
+    static String fileStr = "./clientshttp/src/resources/config.csv";
     static ManagerClient managerClient;
 
     public static void main(String[] args) {
